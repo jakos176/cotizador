@@ -3,6 +3,7 @@ import Header from "./Header";
 import Formulario from "./Formulario";
 import {calcularMarca, obtenerDiferenciaAnio, obtenerPlan} from "../helper";
 import Resumen from "./Resumen";
+import Resultado from "./Resultado";
 
 class App extends Component {
 
@@ -39,7 +40,7 @@ class App extends Component {
         };
 
         this.setState({
-            resultado: coste,
+            resultado: coste + " $",
             datos: datosAuto
         });
 
@@ -51,8 +52,9 @@ class App extends Component {
                 <Header titulo="Cotizador de Seguros de auto"/>
 
                 <div className="contenedor-formulario">
+                    <Resultado resultado={this.state.resultado}/>
                     <Formulario cotizarSeguro={this.cotizar}/>
-                    <Resumen datos={this.state.datos} resultado={this.state.resultado} />
+                    <Resumen datos={this.state.datos}/>
                 </div>
             </div>
         );

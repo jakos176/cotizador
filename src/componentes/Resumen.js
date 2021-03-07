@@ -21,7 +21,12 @@ class Resumen extends Component {
     };
 
     render() {
-        return (this.mostrarResumen());
+        return (
+            <div>
+                {this.mostrarResumen()}
+            </div>
+        );
+
     }
 
 }
